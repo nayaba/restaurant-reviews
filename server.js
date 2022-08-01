@@ -2,7 +2,7 @@ const express = require('express')
 const { get } = require('mongoose')
 const PORT = process.env.PORT || 3001
 const db = require('./db/index')
-const { getAll } = require('./controllers/restaurants')
+const { getAll, createOne, findOne } = require('./controllers/restaurants')
 
 const app = express()
 
@@ -14,15 +14,9 @@ app.use(express.static(`${__dirname}/client/build`))
 // simple testing route
 app.get('/restaurants', getAll)
 
-app.post('/restaurants', async (req, res) => {
-  let created = await Restaurant.create(req.body)
-  res.json(created)
-})
+app.post('/restaurants', createOne)
 
-app.get('/restaurants/:id', async (req, res) => {
-  let found = await Restaurant.findById(req.params.id)
-  res.json(found)
-})
+app.get('/restaurants/:id', findOne)
 
 // DEPLOYED APP
 app.get('/*', (req, res) => {
