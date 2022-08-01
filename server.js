@@ -7,8 +7,8 @@ const app = express()
 app.use(express.static(`${__dirname}/client/build`))
 
 // simple testing route
-app.get('/restauarants', (req, res) => {
-  res.send('I`m in the get route')
+app.get('/restaurants', (req, res) => {
+  res.send('restaurant route hit')
 })
 
 // DEPLOYED APP
