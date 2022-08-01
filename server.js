@@ -24,7 +24,7 @@ app.post('/restaurants', async (req, res) => {
   res.json(created)
 })
 
-app.get('restaurants/:id', async (req, res) => {
+app.get('/restaurants/:id', async (req, res) => {
   let found = await Restaurant.findById(req.params.id)
   res.json(found)
 })
