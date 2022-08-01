@@ -17,3 +17,6 @@
 GET all restaurants -> /api/restaurants
 GET single restaurant -> /api/restaurants/:id
 POST single restaurant -> /api/restaurants
+
+## Description
+Grammable Cuisine is an app that allows users to post instagram worthy restaurant locations for other users to find.  Restaurants can be searched by cuisine, dietary restriction, color scheme, or all three!
