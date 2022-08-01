@@ -4,6 +4,9 @@ const db = require('./db/index')
 
 const app = express()
 
+// models
+const { Restaurant } = require('./models/restaurant')
+
 // MIDDLEWARE
 app.use(express.static(`${__dirname}/client/build`))
 
