@@ -1,5 +1,4 @@
 const express = require('express')
-const { get } = require('mongoose')
 const PORT = process.env.PORT || 3001
 const routes = require('./routes')
 const db = require('./db/index')
