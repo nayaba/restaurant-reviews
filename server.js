@@ -2,11 +2,9 @@ const express = require('express')
 const { get } = require('mongoose')
 const PORT = process.env.PORT || 3001
 const db = require('./db/index')
+const { getAll } = require('./controllers/restaurants')
 
 const app = express()
-
-// models
-const { Restaurant } = require('./models/restaurant')
 
 // MIDDLEWARE
 app.use(express.json())
@@ -14,10 +12,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(`${__dirname}/client/build`))
 
 // simple testing route
-app.get('/restaurants', async (req, res) => {
-  let restaurants = await Restaurant.find({})
-  res.send(restaurants)
-})
+app.get('/restaurants', getAll)
 
 app.post('/restaurants', async (req, res) => {
   let created = await Restaurant.create(req.body)
