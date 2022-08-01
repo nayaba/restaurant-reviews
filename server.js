@@ -17,7 +17,9 @@ app.get('/restaurants', async (req, res) => {
 })
 
 app.post('/restaurants', async (req, res) => {
-  res.send('post route')
+  let body = req.body
+  let newRestaurant = await Restaurant.create(body)
+  res.send(newRestaurant)
 })
 
 // DEPLOYED APP
