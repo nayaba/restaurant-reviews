@@ -16,6 +16,10 @@ app.get('/restaurants', async (req, res) => {
   res.send(restaurants)
 })
 
+app.post('/restaurants', async (req, res) => {
+  res.send('post route')
+})
+
 // DEPLOYED APP
 app.get('/*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
