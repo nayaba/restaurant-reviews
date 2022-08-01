@@ -6,7 +6,8 @@ const reviewSchema = new Schema(
     name: { type: String },
     title: { type: String },
     body: { type: String },
-    rating: { type: Number }
+    rating: { type: Number },
+    restaurant: { type: Schema.Types.ObjectId, ref: 'Restaurant' }
   },
   {
     timestamps: true
