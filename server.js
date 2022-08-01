@@ -11,8 +11,9 @@ const { Restaurant } = require('./models/restaurant')
 app.use(express.static(`${__dirname}/client/build`))
 
 // simple testing route
-app.get('/restaurants', (req, res) => {
-  res.send('restaurant route hit')
+app.get('/restaurants', async (req, res) => {
+  let restaurants = await Restaurant.find({})
+  res.send(restaurants)
 })
 
 // DEPLOYED APP
