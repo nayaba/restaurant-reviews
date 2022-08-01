@@ -25,9 +25,15 @@ const updateOne = async (req, res) => {
   res.json(updated)
 }
 
+const deleteOne = async (req, res) => {
+  let deleted = await Review.deleteOne({ _id: req.params.id })
+  res.json(deleted)
+}
+
 module.exports = {
   getAll,
   createOne,
   findOne,
-  updateOne
+  updateOne,
+  deleteOne
 }

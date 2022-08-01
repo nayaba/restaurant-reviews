@@ -13,5 +13,6 @@ router.get('/reviews', review.getAll)
 router.post('/reviews', review.createOne)
 router.get('/reviews/:id', review.findOne)
 router.put('/reviews/:id', review.updateOne)
+router.delete('/reviews/:id', review.deleteOne)
 
 module.exports = router
