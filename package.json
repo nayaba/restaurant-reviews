@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nayaba/restaurant-reviews/issues"
   },
-  "homepage": "https://github.com/nayaba/restaurant-reviews#readme"
+  "homepage": "https://github.com/nayaba/restaurant-reviews#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
