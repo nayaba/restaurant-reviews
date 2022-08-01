@@ -8,9 +8,10 @@ const getAll = async (req, res) => {
 }
 
 const createOne = async (req, res) => {
+  let created = await Review.create(req.body)
   let found = await Restaurant.findById(req.params.id)
-  // let created = await Review.create(req.body)
-
+  found.reviews.push(created._id)
+  found.save()
   res.json(found)
 }
 
