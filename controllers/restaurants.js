@@ -16,6 +16,10 @@ const findOne = async (req, res) => {
   res.json(found)
 }
 
+const updateOne = async (req, res) => {
+  let updated = await Restaurant
+}
+
 module.exports = {
   getAll,
   createOne,

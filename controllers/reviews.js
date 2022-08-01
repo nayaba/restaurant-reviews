@@ -16,8 +16,18 @@ const findOne = async (req, res) => {
   res.json(found)
 }
 
+const updateOne = async (req, res) => {
+  let updated = await Review.findByIdAndUpdate(
+    { _id: req.params.id },
+    req.body,
+    { new: true }
+  )
+  res.json(updated)
+}
+
 module.exports = {
   getAll,
   createOne,
-  findOne
+  findOne,
+  updateOne
 }

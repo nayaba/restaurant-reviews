@@ -12,5 +12,6 @@ router.get('/restaurants/:id', restaurant.findOne)
 router.get('/reviews', review.getAll)
 router.post('/reviews', review.createOne)
 router.get('/reviews/:id', review.findOne)
+router.put('/reviews/:id', review.updateOne)
 
 module.exports = router
