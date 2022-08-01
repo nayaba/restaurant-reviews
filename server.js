@@ -8,6 +8,8 @@ const app = express()
 const { Restaurant } = require('./models/restaurant')
 
 // MIDDLEWARE
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(express.static(`${__dirname}/client/build`))
 
 // simple testing route
@@ -19,7 +21,7 @@ app.get('/restaurants', async (req, res) => {
 app.post('/restaurants', async (req, res) => {
   let body = req.body
   let newRestaurant = await Restaurant.create(body)
-  res.send(newRestaurant)
+  res.json(newRestaurant)
 })
 
 // DEPLOYED APP

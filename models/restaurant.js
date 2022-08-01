@@ -3,9 +3,9 @@ const Schema = mongoose.Schema
 
 const restaurantSchema = new Schema(
   {
-    name: String,
-    location: String,
-    photo_url: String
+    name: { type: String },
+    location: { type: String },
+    photo_url: { type: String }
   },
   {
     timestamps: true
