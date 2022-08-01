@@ -1,4 +1,5 @@
 const express = require('express')
+const { get } = require('mongoose')
 const PORT = process.env.PORT || 3001
 const db = require('./db/index')
 
@@ -19,9 +20,13 @@ app.get('/restaurants', async (req, res) => {
 })
 
 app.post('/restaurants', async (req, res) => {
-  let body = req.body
-  let newRestaurant = await Restaurant.create(body)
-  res.json(newRestaurant)
+  let created = await Restaurant.create(req.body)
+  res.json(created)
+})
+
+app.get('restaurants/:id', async (req, res) => {
+  let found = await Restaurant.findById(req.params.id)
+  res.json(found)
 })
 
 // DEPLOYED APP
