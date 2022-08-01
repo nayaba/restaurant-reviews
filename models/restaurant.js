@@ -5,7 +5,8 @@ const restaurantSchema = new Schema(
   {
     name: { type: String },
     location: { type: String },
-    photo_url: { type: String }
+    photo_url: { type: String },
+    reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }]
   },
   {
     timestamps: true
