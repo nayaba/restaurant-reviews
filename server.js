@@ -7,7 +7,7 @@ const app = express()
 app.use(express.static(`${__dirname}/client/build`))
 
 // simple testing route
-app.get('/', (req, res) => {
+app.get('/restauarants', (req, res) => {
   res.send('I`m in the get route')
 })
 
