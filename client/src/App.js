@@ -18,6 +18,7 @@ function App() {
     const getRestaurants = async () => {
       let res = await axios.get(`${BASE_URL}/api/restaurants`)
       console.log(res)
+      setRestaurants(res.data)
     }
     getRestaurants()
   }, [])
@@ -30,7 +31,10 @@ function App() {
       <main>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/restaurants" element={<RestaurantList />} />
+          <Route
+            path="/restaurants"
+            element={<RestaurantList restaurants={restaurants} />}
+          />
           <Route path="add" element={<RestaurantForm />} />
           <Route
             path="restaurant/:restaurantId/review/:reviewId"
