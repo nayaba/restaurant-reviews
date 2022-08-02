@@ -7,8 +7,21 @@ import RestaurantForm from './pages/RestaurantForm'
 import ReviewDetails from './pages/ReviewDetails'
 import RestaurantDetails from './pages/RestaurantDetails'
 import ReviewForm from './pages/ReviewForm'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { BASE_URL } from './globals'
 
 function App() {
+  const [restaurants, setRestaurants] = useState([])
+
+  useEffect(() => {
+    const getRestaurants = async () => {
+      let res = await axios.get(`${BASE_URL}/api/restaurants`)
+      console.log(res)
+    }
+    getRestaurants()
+  }, [])
+
   return (
     <div>
       <header>
